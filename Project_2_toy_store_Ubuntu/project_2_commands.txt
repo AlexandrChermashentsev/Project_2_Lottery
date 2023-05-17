@@ -1,0 +1,111 @@
+	1. Используйте команды операционной системы Linux и создайте две новых директории – «Игрушки для школьников» и «Игрушки для дошколят»
+alexcherm@alexcherm-linux:~$ mkdir Project_2_Toy_Store
+alexcherm@alexcherm-linux:~$ cd Project_2_Toy_Store/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ mkdir Toys_for_schoolchildren Toys_for_preschoolers
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ ll
+total 16
+drwxrwxr-x  4 alexcherm alexcherm 4096 мая 16 12:48 ./
+drwxr-x--- 22 alexcherm alexcherm 4096 мая 16 12:44 ../
+drwxrwxr-x  2 alexcherm alexcherm 4096 мая 16 12:48 Toys_for_preschoolers/
+drwxrwxr-x  2 alexcherm alexcherm 4096 мая 16 12:48 Toys_for_schoolchildren/
+
+	2. Создайте в директории «Игрушки для школьников» текстовые файлы - «Роботы», «Конструктор», «Настольные игры»
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ cd Toys_for_schoolchildren/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/Toys_for_schoolchildren$ touch robots.txt contructor.txt board_games.txt
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/Toys_for_schoolchildren$ ll
+total 8
+drwxrwxr-x 2 alexcherm alexcherm 4096 мая 16 13:06 ./
+drwxrwxr-x 4 alexcherm alexcherm 4096 мая 16 12:48 ../
+-rw-rw-r-- 1 alexcherm alexcherm    0 мая 16 13:06 board_games.txt
+-rw-rw-r-- 1 alexcherm alexcherm    0 мая 16 13:06 contructor.txt
+-rw-rw-r-- 1 alexcherm alexcherm    0 мая 16 13:06 robots.txt
+
+	3. Создайте в директории «Игрушки для дошколят» текстовые файлы «Мягкие игрушки», «Куклы», «Машинки»
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/Toys_for_schoolchildren$ cd ..
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ cd Toys_for_preschoolers
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/Toys_for_preschoolers$ touch stuffed_toys.txt dolls.txt cars.txt
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/Toys_for_preschoolers$ ll
+total 8
+drwxrwxr-x 2 alexcherm alexcherm 4096 мая 16 13:11 ./
+drwxrwxr-x 4 alexcherm alexcherm 4096 мая 16 12:48 ../
+-rw-rw-r-- 1 alexcherm alexcherm    0 мая 16 13:11 cars.txt
+-rw-rw-r-- 1 alexcherm alexcherm    0 мая 16 13:11 dolls.txt
+-rw-rw-r-- 1 alexcherm alexcherm    0 мая 16 13:11 stuffed_toys.txt
+	
+	4. Объединить 2 директории в одну «Имя Игрушки»
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/Toys_for_preschoolers$ cd ..
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ mkdir name_toys
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ ll
+total 20
+drwxrwxr-x  5 alexcherm alexcherm 4096 мая 16 13:18 ./
+drwxr-x--- 22 alexcherm alexcherm 4096 мая 16 12:44 ../
+drwxrwxr-x  2 alexcherm alexcherm 4096 мая 16 13:18 name_toys/
+drwxrwxr-x  2 alexcherm alexcherm 4096 мая 16 13:11 Toys_for_preschoolers/
+drwxrwxr-x  2 alexcherm alexcherm 4096 мая 16 13:06 Toys_for_schoolchildren/
+
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ cp -r ~/Project_2_Toy_Store/Toys_for_schoolchildren/ ~/Project_2_Toy_Store/name_toys/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ cp -r ~/Project_2_Toy_Store/Toys_for_preschoolers/ ~/Project_2_Toy_Store/name_toys/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ cd name_toys/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/name_toys$ ll
+total 16
+drwxrwxr-x 4 alexcherm alexcherm 4096 мая 16 13:34 ./
+drwxrwxr-x 5 alexcherm alexcherm 4096 мая 16 13:30 ../
+drwxrwxr-x 2 alexcherm alexcherm 4096 мая 16 13:34 Toys_for_preschoolers/
+drwxrwxr-x 2 alexcherm alexcherm 4096 мая 16 13:33 Toys_for_schoolchildren/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/name_toys$ cd ..
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ rm -r Toys_for_preschoolers/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ rm -r Toys_for_schoolchildren/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ ll
+total 12
+drwxrwxr-x  3 alexcherm alexcherm 4096 мая 16 13:36 ./
+drwxr-x--- 22 alexcherm alexcherm 4096 мая 16 13:28 ../
+drwxrwxr-x  4 alexcherm alexcherm 4096 мая 16 13:34 name_toys/
+
+	5. Переименовать директорию «Имя Игрушки» в «Игрушки»
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ mv name_toys/ toys
+
+	6. Просмотреть содержимое каталога «Игрушки».
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ cd toys/
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/toys$ ll
+total 16
+drwxrwxr-x 4 alexcherm alexcherm 4096 мая 16 13:34 ./
+drwxrwxr-x 3 alexcherm alexcherm 4096 мая 16 13:40 ../
+drwxrwxr-x 2 alexcherm alexcherm 4096 мая 16 13:34 Toys_for_preschoolers/
+drwxrwxr-x 2 alexcherm alexcherm 4096 мая 16 13:33 Toys_for_schoolchildren/
+
+	7. Установить и удалить snap-пакет. (Любой, какой хотите)
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/toys$ sudo apt update
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/toys$ dpkg -l
+...
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/toys$ snap search cron
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store/toys$ sudo snap install mkcron
+mkcron 1.0 from keshavbhatt (keshavnrj✪) installed
+
+	8. Добавить произвольную задачу для выполнения каждые 3 минуты (Например, запись в текстовый файл чего-то или копирование из каталога А в каталог Б).
+alexcherm@alexcherm-linux:~$ sudo crontab -l
+...
+
+3 * * * * /tmp/test.sh
+3 * * * * mkdir /tmp/test_directory
+4 * * * * rm -rf /tmp/test_directory
+0 10 1 * * tar -zcf /var/backups/home.tgz /home/
+
+alexcherm@alexcherm-linux:~$ nano /tmp/Project_2_Ex8.sh
+-------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+echo 'text for Project' > /Project_2_Toy_Store/textcron.txt
+-------------------------------------------------------------------------------------------------
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ sudo chmod +x /tmp/Project_2_Ex8.sh
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ sudo crontab -e
+-------------------------------------------------------------------------------------------------
+.....
+3 * * * * /tmp/Project_2_Ex8.sh
+-------------------------------------------------------------------------------------------------
+alexcherm@alexcherm-linux:~/Project_2_Toy_Store$ sudo crontab -l
+....
+3 * * * * /tmp/test.sh
+3 * * * * mkdir /tmp/test_directory
+4 * * * * rm -rf /tmp/test_directory
+0 10 1 * * tar -zcf /var/backups/home.tgz /home/
+3 * * * * /tmp/Project_2_Ex8.sh
